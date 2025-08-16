@@ -1,3 +1,5 @@
+// use double for calculating time, as 1.33 and 1 is not same, if int is taken  both  will be 1 which will return a wrong answer.
+
 import java.util.*;
 
 class Solution {

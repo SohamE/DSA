@@ -20,7 +20,6 @@ public class Solution {
 
         int l = 0;
         for (int r = s1.length(); r < s2.length(); r++) {
-            System.out.println(matches);
             if (matches == 26) {
                 return true;
             }

@@ -52,6 +52,7 @@ class Solution {
         int[][] traverses = new int[][] { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
         for (int[] position : positions) {
             int node = (position[0] * n) + position[1];
+            // for duplicate position
             if (visited[node] == 1) {
                 ans.add(count);
                 continue;
@@ -64,6 +65,7 @@ class Solution {
                 int newNode = (newi * n) + newj;
                 if (newi < 0 || newj < 0 || newi >= m || newj >= n || visited[newNode] == 0)
                     continue;
+                // if node and newNode has same parent, it's already a part of old island hence we dont reduce the island count.
                 if (djs.findUParent(node) != djs.findUParent(newNode)) {
                     djs.unionBySize(node, newNode);
                     count--;

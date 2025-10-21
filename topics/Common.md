@@ -20,12 +20,12 @@ Are decimals involved?
 
 ### What is the modulo value for java, and how to use it while returning result (if mentioned in question)
 
-1e3  = 1000
-1e5  = 100000
-1e9  = 1000000000
-1e9+7 = 1000000007
+1e3  = 1000  
+1e5  = 100000  
+1e9  = 1000000000  
+1e9+7 = 1000000007  
 
-static final int MOD = 1000000007; // preferred
+static final int MOD = 1000000007; // preferred  
 long mod = (long) 1e9 + 7; // gives 1000000007
 
 Example use

@@ -1,5 +1,5 @@
 ### How to know when to use int, long, double based on the constraints
-```
+
 | Common constraint                           | Usually safe type | Why                                        |
 | ------------------------------------------- | ----------------- | ------------------------------------------ |
 | `n ≤ 10³`                                   | `int`             | All operations small                       |
@@ -10,6 +10,5 @@
 | Division, square root, or percentage        | `double`          | Needs fractional precision                 |
 | Coordinate geometry / Euclidean distance    | `double`          | Involves √ and decimal fractions           |
 
-```
 
 ### what is the modulo value for java, and how to use it while returning result (if mentioned in question)

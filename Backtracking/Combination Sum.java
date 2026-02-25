@@ -6,19 +6,18 @@ class Solution {
         return result;
     }
 
-    public void targetSum(int[] candidates, int target, List<Integer> subset, List<List<Integer>> result, int prevIndex) {
+    public void targetSum(int[] candidates, int target, List<Integer> subset, List<List<Integer>> result, int index) {
         if (target == 0) {
             result.add(new ArrayList<>(subset));
             return;
         }
-        for (int i = prevIndex; i < candidates.length; i++) {
-            int val = target - candidates[i];
-            if (val >= 0) {
-                subset.add(candidates[i]);
-                targetSum(candidates, val, subset, result, i);
-                subset.remove(subset.size() - 1);
-            }
+        if (target < 0 || index >= candidates.length) {
+            return;
         }
+        subset.add(candidates[index]);
+        targetSum(candidates, target-candidates[index], subset, result, index);
+        subset.remove(subset.size() - 1);
+        targetSum(candidates, target, subset, result, index+1);
         return;
     }
 }

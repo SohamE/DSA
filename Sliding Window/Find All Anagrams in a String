@@ -1,0 +1,27 @@
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        int m = p.length();
+        int n = s.length();
+        List<Integer> ans = new ArrayList<>();
+        for(int i=0;i<n-m+1;i++) {
+            if (checkAnagram(i,i+m,s,p))
+                ans.add(i);
+        }
+        return ans;
+    }
+
+    public boolean checkAnagram(int i, int j,String s, String p) {
+        int[] store = new int[26];
+        while (i<j) {
+            store[s.charAt(i++) - 'a']++;
+        }
+        for (int k=0;k<p.length();k++) {
+            store[p.charAt(k) - 'a']--;
+        }
+        for (int k=0;k<26;k++) {
+            if (store[k] != 0)
+                return false;
+        }
+        return true;
+    }
+}
